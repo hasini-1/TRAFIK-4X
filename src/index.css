@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-cyber-bg text-slate-100 antialiased;
+
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    margin: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Orbitron', sans-serif;
+
+    @apply font-bold tracking-wider;
+  }
+}
+
+/* Scaling up small font sizes for readability in Rajdhani */
+.text-\[8px\] {
+  font-size: 10.5px !important;
+}
+.text-\[8\.5px\] {
+  font-size: 11px !important;
+}
+.text-\[9px\] {
+  font-size: 11.5px !important;
+}
+.text-\[9\.5px\] {
+  font-size: 12px !important;
+}
+.text-\[10px\] {
+  font-size: 12.5px !important;
+}
+.text-xs {
+  font-size: 13px !important;
+}
+.font-sans {
+  font-family: 'Rajdhani', sans-serif !important;
+  font-weight: 500 !important;
+}
+.font-mono {
+  font-family: 'Rajdhani', monospace !important;
+  font-weight: 500 !important;
+}
+
+/* Custom Cyber Design System Utilities */
+.cyber-grid-exact {
+  background-size: 48px 48px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 210, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 210, 255, 0.05) 1px, transparent 1px);
+}
+
+.radial-glow-exact {
+  background: radial-gradient(circle at 50% 50%, rgba(0, 210, 255, 0.07) 0%, rgba(5, 11, 24, 0) 75%);
+}
+
+/* Glassmorphic Cyber Card with Cyan Top Highlight Glow */
+.glass-card-exact {
+  background: rgba(8, 12, 30, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 210, 255, 0.12);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(0, 210, 255, 0.06);
+  position: relative;
+}
+
+.glass-card-exact::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 10%;
+  right: 10%;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, #00d2ff, transparent);
+  box-shadow: 0 0 7px rgba(0, 210, 255, 0.5), 0 0 14px rgba(0, 210, 255, 0.25);
+  z-index: 10;
+}
+
+/* Button Glows */
+.btn-glow-cyan {
+  box-shadow: 0 0 9px rgba(0, 210, 255, 0.2);
+}
+
+.btn-glow-cyan:hover {
+  box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+}
+
+/* Scrollbar Custom Styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #030611;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #111936;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00f0ff;
+  box-shadow: 0 0 5px rgba(0, 240, 255, 0.25);
+}
+
+/* Glow Effects (Used Selectively for Critical/Emergency States) */
+.glow-cyan {
+  box-shadow: 0 0 6px rgba(0, 240, 255, 0.15);
+  border-color: rgba(0, 210, 255, 0.4) !important;
+}
+
+.glow-critical {
+  box-shadow: 0 0 7px rgba(255, 0, 85, 0.2);
+  border-color: rgba(255, 0, 85, 0.4) !important;
+}
+
+.glow-text-cyan {
+  text-shadow: 0 0 3.5px rgba(0, 240, 255, 0.4);
+}
+
+.glow-text-critical {
+  text-shadow: 0 0 4.5px rgba(255, 0, 85, 0.45);
+}
+
+.glow-text-green {
+  text-shadow: 0 0 3.5px rgba(0, 255, 102, 0.4);
+}
+
+/* Tech Corner Clip Path */
+.clip-corners {
+  clip-path: polygon(
+    0px 0px, 
+    calc(100% - 12px) 0px, 
+    100% 12px, 
+    100% 100%, 
+    12px 100%, 
+    0px calc(100% - 12px)
+  );
+}
+
+.clip-corners-sm {
+  clip-path: polygon(
+    0px 0px, 
+    calc(100% - 6px) 0px, 
+    100% 6px, 
+    100% 100%, 
+    6px 100%, 
+    0px calc(100% - 6px)
+  );
+}
+
+/* Tables styling overrides */
+table th, .table-header {
+  font-size: 0.875rem !important;
+  font-weight: 700 !important;
+  height: 48px !important;
+  min-height: 48px !important;
+}
+
+table td, .table-row {
+  font-size: 0.875rem !important;
+  height: 44px !important;
+  min-height: 44px !important;
+}
+
+/* Sidebar navigation overrides */
+nav button svg, nav a svg {
+  width: 20px !important;
+  height: 20px !important;
+}
+nav button, nav a {
+  font-size: 0.875rem !important;
+}
+
+/* Override default Leaflet popup styles to make it completely transparent */
+.leaflet-popup-content-wrapper {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.leaflet-popup-tip-container {
+  display: none !important; /* hide the tip container completely */
+}
+
+.leaflet-popup-tip {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.leaflet-popup-content {
+  padding: 0 !important;
+  margin: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Custom Zone Status Glows & Borders */
+.zone-glow-active {
+  border: 2px solid rgba(255, 0, 85, 0.75) !important;
+  box-shadow: 0 0 15px rgba(255, 0, 85, 0.35), inset 0 0 10px rgba(255, 0, 85, 0.15) !important;
+  animation: borderPulseRed 2s infinite ease-in-out;
+}
+
+.zone-glow-standby {
+  border: 2px solid rgba(255, 204, 0, 0.75) !important;
+  box-shadow: 0 0 15px rgba(255, 204, 0, 0.25), inset 0 0 10px rgba(255, 204, 0, 0.08) !important;
+}
+
+.zone-glow-watchlist {
+  border: 2px solid rgba(255, 119, 0, 0.75) !important;
+  box-shadow: 0 0 15px rgba(255, 119, 0, 0.25), inset 0 0 10px rgba(255, 119, 0, 0.08) !important;
+}
+
+.zone-glow-inactive {
+  border: 2px solid rgba(255, 255, 255, 0.15) !important;
+  box-shadow: none !important;
+}
+
+@keyframes borderPulseRed {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 0, 85, 0.25), inset 0 0 5px rgba(255, 0, 85, 0.1);
+    border-color: rgba(255, 0, 85, 0.5) !important;
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 0, 85, 0.55), inset 0 0 15px rgba(255, 0, 85, 0.25);
+    border-color: rgba(255, 0, 85, 0.95) !important;
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255, 0, 85, 0.25), inset 0 0 5px rgba(255, 0, 85, 0.1);
+    border-color: rgba(255, 0, 85, 0.5) !important;
+  }
+}
+
+/* Moving dash animation for Leaflet polylines */
+@keyframes leafletDashFlow {
+  to {
+    stroke-dashoffset: -40px;
+  }
+}
+
+.leaflet-animated-polyline {
+  stroke-dasharray: 10, 10;
+  animation: leafletDashFlow 2s linear infinite !important;
+}
+
+/* Custom speed flow animations */
+.flow-fast {
+  animation: leafletDashFlow 1.2s linear infinite !important;
+}
+
+.flow-medium {
+  animation: leafletDashFlow 2.5s linear infinite !important;
+}
+
+.flow-slow {
+  animation: leafletDashFlow 6s linear infinite !important;
+}
+
+.flow-stopped {
+  stroke-dasharray: none !important;
+  animation: none !important;
+}
+
+/* Flashing emergency card */
+.emergency-card-flash {
+  border: 2px solid rgba(255, 0, 85, 0.85) !important;
+  box-shadow: 0 0 25px rgba(255, 0, 85, 0.45) !important;
+  animation: bgPulseRed 1.5s infinite ease-in-out !important;
+}
+
+@keyframes bgPulseRed {
+  0% {
+    background: rgba(8, 12, 30, 0.85);
+  }
+  50% {
+    background: rgba(255, 0, 85, 0.15);
+  }
+  100% {
+    background: rgba(8, 12, 30, 0.85);
+  }
+}
+
+/* Glass card cyber style */
+.glass-card-cyber {
+  background: rgba(6, 11, 28, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 210, 255, 0.2);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.75), 
+              inset 0 1px 0 rgba(0, 210, 255, 0.1),
+              0 0 15px rgba(0, 210, 255, 0.05);
+  position: relative;
+}
+
+.glass-card-cyber::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00d2ff, #38bdf8, transparent);
+  box-shadow: 0 0 8px rgba(0, 210, 255, 0.6);
+  z-index: 10;
+}
+
+/* Hazard Alert border */
+.hazard-alert-border {
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 0, 85, 0.15),
+    rgba(255, 0, 85, 0.15) 10px,
+    rgba(0, 0, 0, 0.2) 10px,
+    rgba(0, 0, 0, 0.2) 20px
+  );
+  border: 1px solid rgba(255, 0, 85, 0.4);
+}
+
+/* Blinking Map Markers */
+.marker-blink-red {
+  animation: mapMarkerBlinkRed 1s infinite alternate !important;
+}
+.marker-blink-orange {
+  animation: mapMarkerBlinkOrange 1s infinite alternate !important;
+}
+.marker-blink-yellow {
+  animation: mapMarkerBlinkYellow 1s infinite alternate !important;
+}
+.marker-blink-green {
+  animation: mapMarkerBlinkGreen 1s infinite alternate !important;
+}
+
+@keyframes mapMarkerBlinkRed {
+  0% { box-shadow: 0 0 4px rgba(255, 0, 85, 0.4); transform: scale(0.95); }
+  100% { box-shadow: 0 0 16px rgba(255, 0, 85, 0.9); transform: scale(1.1); }
+}
+@keyframes mapMarkerBlinkOrange {
+  0% { box-shadow: 0 0 4px rgba(255, 119, 0, 0.4); transform: scale(0.95); }
+  100% { box-shadow: 0 0 16px rgba(255, 119, 0, 0.9); transform: scale(1.1); }
+}
+@keyframes mapMarkerBlinkYellow {
+  0% { box-shadow: 0 0 4px rgba(255, 204, 0, 0.4); transform: scale(0.95); }
+  100% { box-shadow: 0 0 16px rgba(255, 204, 0, 0.9); transform: scale(1.1); }
+}
+@keyframes mapMarkerBlinkGreen {
+  0% { box-shadow: 0 0 4px rgba(0, 255, 102, 0.4); transform: scale(0.95); }
+  100% { box-shadow: 0 0 16px rgba(0, 255, 102, 0.9); transform: scale(1.1); }
+}
+
+
+
+
+

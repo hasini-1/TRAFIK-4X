@@ -1,0 +1,17 @@
+feature,importance
+priority,56.689335
+requires_road_closure,24.653883
+event_cause,5.6329885
+zone,3.9500613
+event_type,3.3304746
+day_of_month,1.4665546
+month,1.3094596
+dist_from_center,0.89801115
+longitude,0.78023064
+latitude,0.6005467
+hour,0.3151288
+day_of_week,0.25174177
+corridor,0.121362254
+similarity_score,0.00023264054
+is_weekend,0.0
+historical_match_count,0.0

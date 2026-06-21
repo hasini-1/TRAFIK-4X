@@ -1,0 +1,15 @@
+fastapi>=0.132.0
+uvicorn>=0.41.0
+pydantic>=2.12.5
+python-multipart>=0.0.22
+SQLAlchemy>=2.0.51
+psycopg2-binary>=2.9.12
+PyJWT>=2.13.0
+bcrypt>=5.0.0
+numpy>=2.4.1
+pandas>=3.0.2
+scikit-learn>=1.8.0
+xgboost>=3.2.0
+lightgbm>=4.6.0
+catboost>=1.2.7
+shap>=0.45.1

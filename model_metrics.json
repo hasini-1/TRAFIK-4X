@@ -1,0 +1,12 @@
+{
+    "Model A (With duration_hours)": {
+        "MAE": 0.104827,
+        "RMSE": 0.381193,
+        "R2": 0.99958
+    },
+    "Model B (Without duration_hours)": {
+        "MAE": 3.273353,
+        "RMSE": 5.493287,
+        "R2": 0.912726
+    }
+}
