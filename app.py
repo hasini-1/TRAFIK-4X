@@ -110,7 +110,10 @@ app = FastAPI(title="Astram Operational Intelligence API")
 # Enable CORS for React frontend (on Vite default port 5173)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=[
+        "http://localhost:5173",
+        "https://trafik-4-x.vercel.app"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
